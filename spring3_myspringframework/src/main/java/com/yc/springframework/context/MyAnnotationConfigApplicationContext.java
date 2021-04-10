@@ -5,6 +5,7 @@ import com.yc.springframework.stereotype.*;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -76,6 +77,14 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
                     invokeResourceMethod(m, obj);
                 }
             }
+            Field[] fs=cls.getDeclaredFields();
+            for(Field field:fs){
+                if(field.isAnnotationPresent(MyAutowired.class)){
+
+                }else if(field.isAnnotationPresent(MyResource.class)){
+
+                }
+            }
         }
     }
 
@@ -91,7 +100,7 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
         //3.从beanMap取出
         Object o=beanMap.get(beanId);
         //4.invoke
-        m.invoke(obj ,0);
+        m.invoke(obj ,o);
     }
 
     private void invokeAutowiredMethod(Method m, Object obj) throws InvocationTargetException, IllegalAccessException {
@@ -121,7 +130,7 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
             }else if(c.isAnnotationPresent(MyController.class)){
                 saveManagedBean(c);
             }else{
-
+                continue;
             }
         }
     }
