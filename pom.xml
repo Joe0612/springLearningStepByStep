@@ -12,8 +12,11 @@
         <module>spring1_helloworld</module>
         <module>spring2_caltools</module>
         <module>spring3_myspringframework</module>
-        <module>untitled</module>
         <module>spring4_aop</module>
+        <module>spring5_selfaop_jdkproxy</module>
+        <module>spring6_selfaop_cglibproxy</module>
+        <module>spring7_tx</module>
+        <module>spring5_selfaop_jdkproxy1</module>
     </modules>
 
     <properties>

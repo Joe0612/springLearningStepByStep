@@ -24,7 +24,8 @@ public class StudentBizImpl {
     //@Inject  //javax中的依赖注入 ，如果有多个对象，（比如这里有StudentDaoJpaImpl 和StudentDaoMybatisImpl对象）
     //因为有多个对象可以注入，所以这里必须用@Named("studentDaoJpaImpl"),如只有一个对象，则不需要写
     //@Autowired  //org.springframework
-    //@Qualifier("studentDaoJpaImpl")  //如果有多个对象，（比如这里有StudentDaoJpaImpl 和StudentDaoMybatisImpl对象）
+    //@Qualifier("studentDaoJpaImpl")  //
+    // 如果有多个对象，（比如这里有StudentDaoJpaImpl 和StudentDaoMybatisImpl对象）
     //因为有多个对象可以注入，如只有一个对象，则不需要写
     @MyResource(name="studentDaoJpaImpl")
     public void setStudentDao(StudentDao studentDao){

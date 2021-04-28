@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * @create: 2021-04-04 14:45
  */
 @Service
-public class StudentBizImpl {
+public class StudentBizImpl implements StudentBiz{
 
     private StudentDao studentDao;
 
